@@ -12,5 +12,6 @@ the word list that is provided with OSX (/usr/share/dict/words)
 
 The third step is generating all the possible combinations, running through them, and seeing if those keys exist in
 our dictionary. If they do, we append the results to our results array, and at the end, we flatten our array, as our
-values are all lists. We then take the unique answers, as words with double letters can create the same results mutiple times
-as combinations are based off of position and not value.
+values are all lists. We then take the unique answers, as words with double letters can create the same results mutiple times as combinations are based off of position and not value.
+
+To run the tests, just run the executable tests.py file from the command line.
