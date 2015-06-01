@@ -19,7 +19,8 @@ class TestJumble(unittest.TestCase):
     @mock.patch('__builtin__.raw_input')
     def test_get_words(self, input_letters):
         input_letters.return_value = "dog"
-        words = get_words("test_words.txt")
+        word_dict = create_word_dict("test_words.txt")
+        words = get_words(word_dict)
         self.assertEqual(['do', 'go', 'dog', 'god', 'God'], words)
 
 if __name__ == '__main__':
