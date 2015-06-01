@@ -1,11 +1,11 @@
 #!/usr/local/bin/python
 
+
 def create_word_dict(word_file):
     with open(word_file, "r") as lines:
         word_dict = {}
         #strips out new lines and filters out single letter words, didn't think they were necessary.
         lines = filter(lambda line: len(line) > 1, map(lambda line: line.rstrip("\n"), lines))
-        word_dict = {}
         for line in lines:
             #maps sorted letter values to word Ex. word_dict['dgo'] = ['dog', 'god', 'God']
             sorted_line = ''.join(sorted(line.lower()))
@@ -20,10 +20,10 @@ def get_words(word_dict):
         combos = comb(i, letters)
         #slightly busy, but this simply adds the word to our total_words if there is a value.
         map(lambda word: total_words.append(word),
-            filter(lambda words: words is not None, [word_dict.get(''.join(sorted(combo)).lower()) for combo in combos]))
+            filter(lambda words: words is not None, [word_dict.get(''.join(sorted(combo)).lower(), None) for combo in combos]))
 
-    #flattens our answer list.
-    return [word for sublist in total_words for word in sublist]
+    #flattens our answer list and take out duplicates (happens when there are repeat letters).
+    return set([word for sublist in total_words for word in sublist])
 
 #http://rosettacode.org/wiki/Combinations#Python
 #grabbed the combinations code off of Rosetta Code, can explain how it works if needed.

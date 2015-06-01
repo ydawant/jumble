@@ -21,7 +21,7 @@ class TestJumble(unittest.TestCase):
         input_letters.return_value = "dog"
         word_dict = create_word_dict("test_words.txt")
         words = get_words(word_dict)
-        self.assertEqual(['do', 'go', 'dog', 'god', 'God'], words)
+        self.assertEqual({'do', 'go', 'dog', 'god', 'God'}, words)
 
 if __name__ == '__main__':
     unittest.main()
