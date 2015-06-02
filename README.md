@@ -15,3 +15,4 @@ our dictionary. If they do, we append the results to our results array, and at t
 values are all lists. We then take the unique answers, as words with double letters can create the same results mutiple times as combinations are based off of position and not value.
 
 To run the tests, just run the executable tests.py file from the command line.
+To run the program, run the executable jumble.py file from the command line.
